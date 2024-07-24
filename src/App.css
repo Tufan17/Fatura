@@ -1,0 +1,9 @@
+.width-auth{
+    width: 60% !important;
+
+}
+@media (max-width: 768px) {
+    .width-auth {
+      width: 100% !important;
+    }
+}
