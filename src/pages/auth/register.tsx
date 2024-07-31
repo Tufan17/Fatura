@@ -59,9 +59,6 @@ const RegisterPage = () => {
           );
         } else {
           toast.success("Kayıt başarıyla gerçekleşti....");
-          // setTimeout(() => {
-          //   window.location.pathname = "/dashboard";
-          // }, 3000);
         }setLoader(false);
       });
     }
