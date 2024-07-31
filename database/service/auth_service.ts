@@ -32,7 +32,7 @@ import {
     };
   };
   
-  const createUser = async (email: string, password: string, name: string,taxNo:string,phone:string) => {
+  const createUser = async (email: string, password: string, name: string,taxNo:string,phone:string,address:string) => {
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
@@ -43,6 +43,7 @@ import {
         name: name,
         phone: phone,
         tax_no: taxNo,
+        address: address,
         created_at: new Date(),
         updated_at: new Date(),
         deleted_at: null,

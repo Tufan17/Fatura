@@ -26,6 +26,7 @@ const RegisterPage = () => {
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
   const [againPassword, setAgainPassword] = useState("");
+  const [address, setAddress] = useState("");
   const [loader, setLoader] = useState(false);
 
   const handleLogin = async () => {
@@ -37,6 +38,8 @@ const RegisterPage = () => {
       toast.error("Kurum adı alanı boş bırakılamaz");
     }else if (taxNO.length === 0) {
       toast.error("Vergi numarası alanı boş bırakılamaz");
+    }else if (address.length === 0) {
+      toast.error("Adres alanı boş bırakılamaz");
     }else if (phone.length === 0) {
       toast.error("Telefon numarası alanı boş bırakılamaz");
     } else if (password.length === 0 || againPassword.length === 0) {
@@ -49,8 +52,7 @@ const RegisterPage = () => {
       toast.error("Şifreler uyuşmuyor...");
     } else {
       setLoader(true);
-      await createUser(email, password, name,taxNO,phone).then((data) => {
-        console.log(data);
+      await createUser(email, password, name,taxNO,phone,address).then((data) => {
         if (!data.status) {
           toast.info(
             "Kayıt esnasında bir sorun oluştu lütfen daha sonra deneyiniz...."
@@ -136,6 +138,14 @@ const RegisterPage = () => {
             required
             value={taxNO}
             onChange={(e) => setTaxNo(e.currentTarget.value)}
+          />
+          <TextInput
+            mt={"sm"}
+            maxLength={30}
+            placeholder="Adressi Giriniz"
+            required
+            value={address}
+            onChange={(e) => setAddress(e.currentTarget.value)}
           />
           <TextInput
             mt={"sm"}
