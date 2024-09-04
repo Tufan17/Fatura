@@ -27,7 +27,7 @@ Bu uygulama, küçük işletmelerin fatura kesme işlemlerini kolaylaştırmak i
 
 ### Adım 1: Depoyu Klonlayın
 
-git clone https://github.com/kullanici/fatura-uygulamasi.git
+git clone https://github.com/Tufan17/Fatura
 
 ## Kullanım
 ### Kullanıcı Yönetimi
